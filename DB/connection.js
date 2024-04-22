@@ -7,3 +7,5 @@ mongoose.connect(process.env.CONNECTION_STRING).then(
 console.log("Connection failed");
 console.log(err);
     })
+
+    module.exports = mongoose.connection;    
