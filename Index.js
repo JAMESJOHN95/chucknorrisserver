@@ -20,3 +20,7 @@ const examserver = express()
  examserver.listen(PORT,()=>{
     console.log(`Server started at port ${PORT} `);
  })
+
+ examserver.get("/",(req,res)=>{
+   res.status(200).send(`<h1 style="color:green">Registeration started and waiting for client request !!!</h1>`)
+})
