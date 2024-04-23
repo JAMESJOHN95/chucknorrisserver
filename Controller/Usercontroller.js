@@ -1,15 +1,15 @@
 const users = require('../Models/usermodel')
 
-// register
+// user
 
 exports.register = async (req, res) => {
     console.log("inside register function");
-    const { name, address, mobile,email,gender,dateofbirth,course } = req.body
-    console.log(name, address, mobile,email,gender,dateofbirth,course );
+    const {name} = req.body
+    console.log(name );
 
     try {
         const newuser = new users({
-            name, address, mobile,email,gender,dateofbirth,course
+            name
         })
         await newuser.save()
         res.status(200).json(newuser)
@@ -19,10 +19,10 @@ exports.register = async (req, res) => {
     }
 }
 
-exports.getstudentdetails = async (req, res) => {
+exports.getuserdetails = async (req, res) => {
     try {
-        const studentdetails = await users.find()
-        res.status(200).json(studentdetails)
+        const user = await users.find()
+        res.status(200).json(user)
 
     } catch (err) {
         res.status(401).json(err)

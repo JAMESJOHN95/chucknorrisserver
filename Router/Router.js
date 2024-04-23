@@ -5,7 +5,7 @@ const router = new express.Router()
 //register
 router.post('/register',usercontroller.register)
 //get all details
-router.get('/register',usercontroller.getstudentdetails)
+router.get('/register',usercontroller.getuserdetails)
 
 
 module.exports = router
